@@ -1,5 +1,5 @@
-<?php
-    require 'header.php';    
+<?php require 'header.php';
+     
     include ('connexion.php');
 
     // Si l'URL ne contient pas d'id, on redirige sur la page d'accueil
@@ -7,7 +7,7 @@
         header('Location: index.php');
     }
 
-    $_REQUEST = $con->prepare('SELECT * FROM oeuvre WHERE id = ?');
+    $_REQUEST = $con->prepare('SELECT * FROM oeuvres WHERE id = ?');
     $_REQUEST->execute([$_GET['id']]);
     $oeuvre = $_REQUEST->fetch();
 

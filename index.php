@@ -1,8 +1,8 @@
 <?php
     require ('header.php');
-    include ('connexion.php');
+    require ('connexion.php');   
 
-    $oeuvres = $con->query("SELECT * FROM oeuvre")
+    $oeuvres = $con->query("SELECT * FROM oeuvres")
 
 ?>
 <div id="liste-oeuvres">
@@ -11,7 +11,7 @@
             <a href="oeuvre.php?id=<?= $oeuvre['id'] ?>">
                 <img src="<?= $oeuvre['lien_photo'] ?>" alt="<?= $oeuvre['nom_de_l_oeuvre'] ?>">
                 <h2><?= $oeuvre['nom_de_l_oeuvre'] ?></h2>
-                <p class="description_de_l_oeuvre"><?= $oeuvre['nom_de_l_artiste'] ?></p>
+                <p class="description"><?= $oeuvre['nom_de_l_artiste'] ?></p>
             </a>
         </article>
     <?php endforeach; ?>

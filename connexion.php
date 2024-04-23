@@ -1,11 +1,16 @@
 <?php
-try
-{
-	$con = new PDO('mysql:host=localhost;dbname=the_artbox;charset=utf8', 'root', '');
-}
-catch (Exception $e)
-{
-    die('Erreur : ' . $e->getMessage());
-}
 
+TRY{
+        $con=new PDO("mysql:host=localhost;dbname=the_artbox", "root", "");
+        $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    }
+    catch(PDOException $exc)
+
+    {
+        echo "Echec de connexion" . $exc->getMessage();
+    }
+
+   
+   
 ?>
