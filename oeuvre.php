@@ -9,10 +9,10 @@
 
     $_REQUEST = $con->prepare('SELECT * FROM oeuvres WHERE id = ?');
     $_REQUEST->execute([$_GET['id']]);
-    $oeuvre = $_REQUEST->fetch();
+    $oeuvre = $_REQUEST->fetch();    
 
     // Si aucune oeuvre trouvé, on redirige vers la page d'accueil
-    if(is_null($oeuvre)) {
+    if(!$oeuvre) {
         header('Location: index.php');
     }
 ?>
